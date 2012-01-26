@@ -1,0 +1,150 @@
+/*
+ COMO SE COLOCAN LOS DIVS:
+
+ CABECERA
+    QR_DIV FONTSIZE_DIV TITULO LOGIN
+ CONTENIDO
+ PIE
+*/
+
+img{
+   border:0;
+}
+
+body {
+   background-color:#d0e4fe;
+}
+
+/*Titol principal*/
+h1 {
+   color:orange;
+   font-size: 26px;
+   text-align:center;
+   text-shadow:-1px -1px 0px #000000,
+               -1px  1px 0px #000000,
+                1px -1px 0px #000000,
+                1px  1px 0px #000000,
+               -2px -2px 0px #999999,
+               -3px -3px 0px #999999,
+               -4px -4px 0px #999999;
+                
+}
+
+/*Titols secundaris, pe: FAQ, etc*/
+h3 {
+   font-size: 24px;
+   color:orange;
+   text-align:center;
+   text-shadow:-1px -1px 0px #000000,
+               -1px  1px 0px #000000,
+                1px -1px 0px #000000,
+                1px  1px 0px #000000;
+}
+
+p {
+   font-family:"Arial, Courrier";
+   font-size:15px;
+}
+
+#cabecera {
+   position:absolute;
+   top:0px;
+   left:0px;
+   width:100%;
+   min-height: 60px;
+   min-width: 800px;
+   background: #b0d4de;
+   box-shadow: 0 0 3px rgba(0,0,0,0.7);
+}
+
+#titulo {
+   position:absolute;
+   left: 155px;
+   top: 0px;
+   right: 300px;
+   height: 30px;
+}
+
+a.link_titol {
+   color:orange;
+   font-size:30px;
+   text-align:center;
+   text-decoration:none;
+}
+
+#QR_div {
+   position:relative;
+   height:50px;
+   width: 50px;
+   background: #00FFFF;
+   left:5px;
+   top:5px;
+   bottom:5px;
+}
+
+#contenido {
+   position:absolute;
+   top:65px;
+   left:5px;
+   right:5px;
+   min-height: 500px;
+}
+
+#QR_logo {
+   position:absolute;
+   width:50px;
+   height:50px;
+}
+
+#login {
+   position: absolute;
+   right:10px;
+   bottom:1px;
+}
+
+#pie {
+   position: relative;
+   left: 0px;
+   bottom: 0px;
+   width:100%;
+   min-height: 60px;
+   min-width: 800px;
+   background: #b0d4de;
+   box-shadow: 0 0 3px rgba(0,0,0,0.7);
+}
+
+#fontsize_div {
+   position: absolute;
+   height: 15px;
+   width: 100px;
+   left: 70px;
+   bottom: 25px;
+}
+
+.jfontsize-button {
+  font-weight: bold;
+  padding: 3px;
+  color: #000;
+  border: solid 1px #ccc;
+}
+
+
+.jfontsize-button:hover {
+  text-decoration: none;
+  background: #333;
+  color: #fff;
+  border: solid 1px #333;
+}
+
+
+.jfontsize-disabled, .jfontsize-disabled:hover {
+  color: #aaa;
+  border: solid 1px #eee;
+  background: #eee;
+}
+
+
+.resizable {
+  margin: 20px 0 0 0;
+}
+
