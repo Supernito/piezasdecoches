@@ -1,6 +1,6 @@
 <?php
    include 'wrappers.php';
-   cabecera("FAQ");
+   cabecera("Disclaimers");
 ?>
 
 <h3>DISCLAIMERS</h3>

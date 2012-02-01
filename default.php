@@ -33,8 +33,8 @@
 ?>
    <h4> Bienvenido a la web PIEZAS DE COCHES, una web que simplemente intenta poner
  en contacto a compradores y vendedores de piezas de coches. Para más información
- visita nuestra sección de <a target='_blank' href='/faq.php'>ayuda</a> o usa nuestro
- <a target='_blank' href='/search.php'>buscador</a> para encontrar lo que buscas. Muchas gracias.</h4>  
+ visita nuestra sección de <a href='/faq.php'>ayuda</a> o usa nuestro
+ <a href='/search.php'>buscador</a> para encontrar lo que buscas. Muchas gracias.</h4>  
 
 <?php
    } else {
@@ -51,9 +51,9 @@
 
       // Y le enseñamos las opciones que tiene
       echo "Bienvenido de nuevo $loggedu, ahora puedes:";
-      echo " ir a tu <a target='_blank' href='/personal.php?id=$id_usuario'>página</a>, ";
+      echo " ir a tu <a href='/personal.php?id=$id_usuario'>página</a>, ";
       echo "<a href='newpiece.php'>insertar pieza</a>, ";
-      echo "<a target='_blank' href='search.php'>buscar piezas</a> ";
+      echo "<a href='search.php'>buscar piezas</a> ";
       echo "o <a href='/logout.php'>salir</a>";
    }
 
@@ -88,9 +88,7 @@
       $id = (int)$_GET['delete'];
       $query = "DELETE FROM ".dbname.".mensaje WHERE id='$id'";
       mysql_query($query) or die(mysql_error());
-   }else{
-		echo "no puedes hacer eso"; die();
-	}
+   }
 
    // Visualizamos los mensajes
    $query="SELECT usuario, u.id id_usr, mensaje, m.id id_msg,CONVERT_TZ(dia, '+00:00', '$zona_horaria') as dia_local
@@ -99,7 +97,7 @@
    $res = mysql_query($query) or die(mysql_error());;
    while ($line = mysql_fetch_object($res)) {
       echo "En ".$line->dia_local." el usuario
-            <a target='_blank' href='/personal.php?id=".$line->id_usr."'>".$line->usuario.
+            <a href='/personal.php?id=".$line->id_usr."'>".$line->usuario.
            "</a> dijo: ".$line->mensaje;
       if ($isadmin=='true'){
          echo " <a href='default.php?delete=".$line->id_msg."'onclick='return confirmarmsg()'>eliminar</a>";
@@ -130,17 +128,17 @@
       echo "<table border='0' summary='Tabla que contiene la imagen y los datos de una pieza'><tr>";
       echo "<td>";
       if ($row['imagen']){
-         echo "<a href='showimg.php?id=$idpieza'> <img src='showimg.php?id=".$row['id']."' alt='Imagen de la pieza' height=160 Width=130></a><br>";
+         echo "<a href='showimg.php?id=$idpieza'> <img src='showimg.php?id=$row[id]' alt='imagen de \"$row[nombre]\"' height=160 Width=130></a><br>";
       }
       echo "</td><td>";
       //datos de la pieza
-      echo "Nombre de la pieza: <a target='_blank' href='/piece.php?id=$idpieza'>".$row['nombre']."</a><br>";
+      echo "Nombre de la pieza: <a href='/piece.php?id=$idpieza'>".$row['nombre']."</a><br>";
       $propietario = $row['propietario'];
       $query = mysql_query("SELECT id,email FROM ".dbname.".usuario WHERE username='$propietario'");
       $rowowner = mysql_fetch_array($query); // Estaría bé posar això en un sol select
       echo "Coches a los que se aplica: ".$row['coche']."<br>";
       echo "Precio: ".$row['precio']."<br>";
-      echo "Propietario: <a target='_blank' href='/personal.php?id=".$rowowner['id']."'>".$propietario."</a><br>";
+      echo "Propietario: <a href='/personal.php?id=".$rowowner['id']."'>".$propietario."</a><br>";
       echo "Correo: ";
       if ($_SESSION['logged']=='true'){
          echo $rowowner['email']."<BR>";

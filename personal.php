@@ -39,6 +39,10 @@
    } else {
       cabecera("Página de $propietario");
    }
+   if (!is_numeric($id) || $id <= 0){
+      echo "No es un usuario valido";
+      pie();die();
+   }
 
 // Scripts de confirmación
 ?>

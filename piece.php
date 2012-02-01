@@ -41,6 +41,10 @@
    $comentarios = $row['comen'];         // Número de comentarios de la pieza
    
    cabecera("Pieza: \"$nom_pieza\"");
+   if (!is_numeric($id) || $id <= 0){
+      echo "No es una pieza válida";
+      pie();die();
+   }
 
 // Scripts de confirmación
 ?>
